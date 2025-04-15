@@ -38,7 +38,7 @@ int main() {
     }		
     
     std::cout << "номер" << "\t" << "до_маск-ния" << "\t" << "после_маск-ния" << std::endl;
-    for(int i = 0; i < 256; i++) {  // Исправлено 255 на 256
+    for(int i = 0; i < 256; i++) {  
         std::cout << i << "\t" << (double)P[i]/size << "\t" << "\t" << (double)C[i]/size << std::endl;
     }    
     int sum_P = 0;
