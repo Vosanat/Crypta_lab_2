@@ -22,12 +22,8 @@ int main() {
         psp_byte = 0;
         for(int i = 0; i < 8; i++) {
            bit1 = ((rlz_1 >> 6) & 0x01) ^ ((rlz_1 >> 3) & 0x01);
-           rlz_1 = (rlz_1 >> 1) | (bit1 << 22);  // 
-    
-           uint32_t bit111 = (rlz_2[3] >> (111 - 96)) & 0x01; 
-           uint32_t bit119 = (rlz_2[3] >> (119 - 96)) & 0x01;  
-           bit2 = bit111 ^ bit119;
-  
+           rlz_1 = (rlz_1 >> 1) | (bit1 << 22);  //   
+           bit2 = ((rlz_2[3] >> (111 - 96)) & 0x01) ^ ((rlz_2[3] >> (119 - 96)) & 0x01);
               for(int j = 0; j < 3; j++) {
                   uint32_t carry = rlz_2[j+1] & 0x01;
                   rlz_2[j] = (rlz_2[j] >> 1) | (carry << 31);
@@ -47,7 +43,7 @@ int main() {
     }    
     int sum_P = 0;
     int sum_C = 0;
-    for(int i = 0; i < 255; i++) { 
+    for(int i = 0; i < 256; i++) {  // Исправлено 255 на 256
         sum_P += P[i];
         sum_C += C[i];
     }
