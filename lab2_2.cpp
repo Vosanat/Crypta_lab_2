@@ -43,7 +43,7 @@ int main() {
     }    
     int sum_P = 0;
     int sum_C = 0;
-    for(int i = 0; i < 256; i++) {  // Исправлено 255 на 256
+    for(int i = 0; i < 256; i++) {  
         sum_P += P[i];
         sum_C += C[i];
     }
